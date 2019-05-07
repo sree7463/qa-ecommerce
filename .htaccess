@@ -1,0 +1,27 @@
+Options -Indexes
+RewriteEngine On
+
+
+RewriteCond %(REQUEST_FILENAME) !-f
+RewriteCond %(REQUEST_FILENAME) !-d
+# RewriteRule ^page/([a-z0-9]+)$ /display.php?page=$1 [L]
+# RewriteRule ^category/([A-Za-z0-9-]+)/([A-Za-z]+)$ index.php?c=Home&m=$1&name=$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+# Options +FollowSymLinks
+# RewriteEngine On
+# RewriteRule ^([0-9]+).html testing.php?id=$1 [QSA,L]
+
+# RewriteEngine On
+# RewriteRule ^blog/([a-zA-Z0-9-/]+)$ /admin/ [L]
